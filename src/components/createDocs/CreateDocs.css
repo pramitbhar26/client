@@ -1,0 +1,44 @@
+.body{
+    background-color: #dbdddee7;
+    height: 400px
+}
+.heading{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 32px;
+    padding-right: 32px;
+}
+.title{
+    font-size: large;
+    color: grey;
+}
+.create-doc{
+    position: relative;
+    top: 20px;
+    height: 15.3rem;
+    width: 11.8rem;
+    left: 32px;
+    cursor: pointer;
+}
+.create-doc img{
+    position: absolute;
+    /* top: 20px; */
+    height: 15rem;
+    /* padding-left: 32px; */
+    border-width: 2px;
+    cursor: pointer;
+    border-color: blue;
+    transition: 0.2s ease-in-out;
+}
+
+.create-doc :hover{
+    border: 2px solid blue;
+}
+.blank{
+    position: relative;
+    /* top: 50px; */
+    left: 30px;
+    font-size: large;
+    font-weight:600;
+}
