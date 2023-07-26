@@ -7,7 +7,7 @@ function App() {
   return (
       <Routes>
 
-        <Route path='/' element={<Home />} />
+        <Route path='/' element={<TextEditor />} />
         {/* <Route path='/documents/:id'>
                  <TextEditor />
                 </Route> */}

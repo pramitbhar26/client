@@ -2,7 +2,8 @@ import React, { useCallback, useEffect, useRef, useState } from 'react'
 import Quill from 'quill'
 import "quill/dist/quill.snow.css"
 import "./styles.css"
-import {io} from 'socket.io-client';
+import io from 'socket.io-client';
+import Header from './components/header/Header';
 const TOOLBAR_OPTIONS = [
   [{ header: [1, 2, 3, 4, 5, 6, false] }],
         [{ font: [] }],
@@ -19,7 +20,15 @@ export default function TextEditor(){
       const [quill,setQuill] = useState()
       useEffect(()=>{
         const s = io("http://localhost:3001")
-        setSocket(s)
+        // s.on('connect', () => {
+        //   console.log('Connected to Socket.IO server');
+          setSocket(s)
+        // });
+
+        // s.on('connect_error', (error) => {
+        //   console.error('Socket.IO connection error:', error);
+        // });
+        
         return ()=>{
           s.disconnect()
         }
@@ -61,7 +70,11 @@ export default function TextEditor(){
     setQuill(q)
   },[])  
   return (
-    <div className="container" ref={wrapperref}></div>
+    <div>
+      <Header/>
+      <div className="container" ref={wrapperref}>
+      </div>
+    </div>
   )
 }
 
